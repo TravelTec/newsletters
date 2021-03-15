@@ -1,0 +1,18 @@
+.g-recaptcha div{
+	margin: 0 auto !important;
+} 
+.btn-news-widget{
+	    width: 100%;
+    background-color: #aaa !important;
+    border: 1px solid #aaa !important;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.btn-news-widget:hover{
+	width: 100%;
+    background-color: #fff !important;
+    border: 1px solid #aaa !important;
+    border-radius: 0;
+    color: #aaa !important;
+}

@@ -49,38 +49,47 @@ function submit_form_revenda() {
         });
     } else {
         var token = $("#token").val();
+ 
+        if (token === "") {
+            swal({
+                title: "É preciso inserir os dados de acesso.",
+                icon: "error",
+            });
+        } else {
 
-        var settings = {
-            async: true,
-            crossDomain: true,
-            url: "https://api.traveltec.com.br/serv/marketing/cadastro_revenda",
-            method: "POST",
-            headers: {
-                token: token,
-                name: name,
-                email: email,
-                "cache-control": "no-cache",
-            },
-        };
+            var settings = {
+                async: true,
+                crossDomain: true,
+                url: "https://api.traveltec.com.br/serv/marketing/cadastro_revenda",
+                method: "POST",
+                headers: {
+                    token: token,
+                    name: name,
+                    email: email,
+                    "cache-control": "no-cache",
+                },
+            };
 
-        $.ajax(settings).done(function (response) {
-            if (response.errors) {
-                swal({
-                    text: response.message,
-                    icon: "error",
-                });
+            $.ajax(settings).done(function (response) {
+                if (response.errors) {
+                    swal({
+                        text: response.message,
+                        icon: "error",
+                    });
 
-                $("#name_news").val("");
-                $("#email_news").val("");
-            } else {
-                swal({
-                    text: response.message,
-                    icon: "success",
-                });
+                    $("#name_news").val("");
+                    $("#email_news").val("");
+                } else {
+                    swal({
+                        text: response.message,
+                        icon: "success",
+                    });
 
-                $("#name_news").val("");
-                $("#email_news").val("");
-            }
-        });
+                    $("#name_news").val("");
+                    $("#email_news").val("");
+                }
+            });
+
+        } 
     }
 } 

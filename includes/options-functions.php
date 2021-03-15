@@ -34,7 +34,8 @@ class NewslettersAdmin extends Newsletters {
 	function init() {
 		$defaults = array(
 			'id_conta' => '',
-			'chave' => '',
+			'chave' => '', 
+			'titulo' => '', 
 		);
 		if ( ! $this->options ) {
 			$this->options = $defaults;

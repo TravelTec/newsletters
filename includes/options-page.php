@@ -24,6 +24,15 @@
 							<p class="description"><?php _e( 'A chave para acesso à conta.', 'news_widget' ); ?></p>
 						</td>
 					</tr>   
+					<tr valign="top" class="news_widget-smtp">
+						<th scope="row">
+							<?php _e( 'Título do bloco' , 'news_widget' ); ?>
+						</th>
+						<td>
+							<input type="text" class="regular-text" name="news_widget[titulo]" value="<?php esc_attr_e( $this->get_option( 'titulo' ) ); ?>" placeholder="100100" />
+							<p class="description"><?php _e( 'Título do bloco que será exibido no site.', 'news_widget' ); ?></p>
+						</td> 
+					</tr>
 				</table> 
 				<p class="submit">
 					<input type="submit" class="button-primary" value="<?php _e( 'Salvar' , 'news_widget' ); ?>" /> 

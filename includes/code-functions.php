@@ -38,32 +38,35 @@ array( 'description' => __( 'Widget para gerar formulário de newsletter integra
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
 
-$options = get_option('news_widget');
-$id_conta = $options['id_conta'];
-$chave = $options['chave'];
-$token = base64_encode($id_conta.';'.$chave); 
+$options = get_option('news_widget');  
+
+if (empty($options['id_conta'])) {
+	$token = '';
+}else{
+	$id_conta = $options['id_conta'];
+	$chave = $options['chave'];
+	$token = base64_encode($id_conta.';'.$chave); 
+} 
 
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
 echo $args['before_title'] . $title . $args['after_title'];
 
-$div_form = '<div class="sidebar-widget">
-		<div class="sidebar-widget-title"><h3>Assine nossas newsletters</h3></div>
-		<ul>
-			<li style="border-bottom: none">
+$div_form = '<div class="sidebar-widget"> 
+<div class="section-header"><h3 class="widget-title">'.$options['titulo'].'</h3><span></span></div>  
+			<p style="border-bottom: none">
 				<input type="text" id="name_news" class="form-control" aria-describedby="name_news" placeholder="Nome" />
 					</li>
-							<li style="border-bottom: none">
+							<p style="border-bottom: none">
 				<input type="text" id="email_news" class="form-control" aria-describedby="email_news" placeholder="E-mail" />
-					</li>
-							<li style="border-bottom: none">
+					</p>
+							<p style="border-bottom: none">
 				<div class="g-recaptcha" data-sitekey="6LdsV2oUAAAAAC_bGVgCScUNOQoEHNYfI7e7qCwP"></div>
-					</li>
-							<li style="border-bottom: none">
+					</p>
+							<p style="border-bottom: none">
 				<button class="btn btn-primary btn-news-widget" onclick="recaptchaCallback()">Cadastrar</button>
-					</li>
-				</ul>
+					</p>  
 				 <input type="hidden" id="token" value="'.$token.'" name="" />
 		</div>';
  

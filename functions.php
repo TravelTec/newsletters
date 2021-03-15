@@ -21,8 +21,8 @@ GitHub Plugin URI: https://github.com/TravelTec/newsletters
 Description: Voucher Tec - Newsletters é um plugin de geração de formulário de newsletter integrado ao painel de revenda do e-mail marketing do fornecedor Locaweb.
 
 
- 
-Version: 1.0.0
+  
+Version: 1.0.1 
 
 
 

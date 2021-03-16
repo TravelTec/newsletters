@@ -22,7 +22,7 @@ Description: Voucher Tec - Newsletters é um plugin de geração de formulário 
 
 
   
-Version: 1.0.1 
+Version: 1.0.2
 
 
 

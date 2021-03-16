@@ -5,6 +5,7 @@
 			<form id="news_widget-form" action="options.php" method="post">
 				<?php settings_fields( 'news_widget' ); ?> 
 				<h3><?php _e( 'Configuração' , 'news_widget' ); ?></h3>
+				<div id="shortcode"></div>
 				<table class="form-table">
 					<tr valign="top" class="news_widget-smtp">
 						<th scope="row">
